@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    <div class="catalog">
+    <div class="form">
+    <form method="post" enctype="multipart/form-data" >
+    {% csrf_token %}
+    {{ form.title }}
+    {{ form.annotation }}
+    {{ form2.name }}
+    {{ form3.genre }}
+    {{form.file }}
+    <p class = 'pdf'>add a .PDF file</p>
+    <p class = 'pdf'>{{ err }}</p>
+        <button class="btn1" type="submit"> Add book </button>
+    </form>
+    </div></div>
+{% endblock content %}
+</body>
+</html>

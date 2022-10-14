@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<div class="catalog">
+<div class="book1"  >
+    <p> {{ book.title }}</p>
+    <p> {{ book.author }}</p>
+    <p> {{ book.genre }}</p>
+    <div class="crud">
+        <a href="{%url 'read' book.id%}"> Read {{ item.file}}</a>
+        <a href="{%url 'delete' book.id %}">Delete</a>
+        <a href="{% url 'update' book.id  %}">Edit</a>
+    </div>
+</div>
+</div>
+
+{% endblock content %}
+</body>
+</html>
